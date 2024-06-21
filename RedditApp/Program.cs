@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 
 public class Program
@@ -11,40 +12,58 @@ public class Program
         var redirectUri = "http://localhost:5000/";
 
         // Optional: Customize these parameters if needed
-        var subredditName = "programming";
+        var subredditName = "mildlyinfuriating";
         var sorting = "new";
         var limit = 1000;
 
         // Create a RedditApiManager instance
         var redditApiManager = new RedditApiManager(clientId, clientSecret, redirectUri);
+        var subredditManager = new Subreddit(subredditName);
 
         // Retrieve posts asynchronously
-        var posts = await redditApiManager.GetPosts(subredditName, sorting, limit);
-
-        if (posts != null)
+        //var posts = await redditApiManager.GetPosts(subredditName, sorting, limit);
+        await redditApiManager.ContinuouslyGetNewPosts(subredditName, sorting, limit, newPosts =>
         {
-            var postsManger = new Subreddit(subredditName);
-            postsManger.AddPost(posts);
+            Console.WriteLine(newPosts.Count);
+            Console.WriteLine($"Current Interval: {redditApiManager.Interval}");
 
-            var mostUpvoted = postsManger.MostUpvotedPosts(5);
-            //Console.WriteLine($"Retrieved {posts.Count} posts from r/{subredditName}:");
-            foreach (var post in mostUpvoted)
+            subredditManager.AddPost(newPosts);
+
+            foreach (var post in subredditManager.MostUpvotedPosts(3))
             {
-                Console.WriteLine($" - {post.Title}");
-                Console.WriteLine($" - {post.Ups}");
+                Console.WriteLine($"Title: {post.Title}, Upvotes: {post.Ups}, Author: {post.Author}");
             }
-
-            var topPosters = postsManger.TopPosters(5);
-
-            foreach(var poster in topPosters)
+            foreach (var poster in subredditManager.TopPosters(2))
             {
-                Console.WriteLine($" - {poster.Username}");
-                Console.WriteLine($" - {poster.PostCount}");
+                Console.WriteLine($"Username: {poster.Username} | Number of Posts: {poster.PostCount}");
             }
-        }
-        else
-        {
-            Console.WriteLine("Failed to retrieve posts.");
-        }
+        });
+        //Console.WriteLine(posts.Count);
+
+        //if (posts != null)
+        //{
+        //    var postsManger = new Subreddit(subredditName);
+        //    postsManger.AddPost(posts);
+
+        //    var mostUpvoted = postsManger.MostUpvotedPosts(5);
+        //    //Console.WriteLine($"Retrieved {posts.Count} posts from r/{subredditName}:");
+        //    foreach (var post in mostUpvoted)
+        //    {
+        //        Console.WriteLine($" - {post.Title}");
+        //        Console.WriteLine($" - {post.Ups}");
+        //    }
+
+        //    var topPosters = postsManger.TopPosters(5);
+
+        //    foreach(var poster in topPosters)
+        //    {
+        //        Console.WriteLine($" - {poster.Username}");
+        //        Console.WriteLine($" - {poster.PostCount}");
+        //    }
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Failed to retrieve posts.");
+        //}
     }
 }

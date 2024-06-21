@@ -12,6 +12,8 @@ public class RedditApiManager
     private readonly string _redirectUri;
     private readonly string _baseUrl;
     private string _accessToken;
+    private HashSet<string> _retrievedPostIds;
+    private TimeSpan _interval { get; set; }
 
     public RedditApiManager(string clientId, string clientSecret, string redirectUri)
     {
@@ -19,6 +21,13 @@ public class RedditApiManager
         _clientSecret = clientSecret;
         _redirectUri = redirectUri;
         _baseUrl = "https://oauth.reddit.com/r/";
+        _retrievedPostIds = new HashSet<string>();
+    }
+
+    public TimeSpan Interval
+    {
+        get { return _interval; }
+        set { _interval = value; }
     }
 
     public async Task<List<Post>> GetPosts(string subreddit, string sorting, int limit)
@@ -35,8 +44,14 @@ public class RedditApiManager
         {
             var remainingPosts = limit - posts.Count;
             var batchSize = remainingPosts > 100 ? 100 : remainingPosts;
-
             var url = $"{_baseUrl}{subreddit}/{sorting}.json?limit={batchSize}&after={after}";
+
+            //Get All Posts
+            if (limit == 0)
+            {
+                url = $"{_baseUrl}{subreddit}/{sorting}.json?after={after}";
+            }
+
 
             using var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
@@ -52,7 +67,14 @@ public class RedditApiManager
 
                 foreach (var post in jsonDocument.RootElement.GetProperty("data").GetProperty("children").EnumerateArray())
                 {
-                    posts.Add(JsonSerializer.Deserialize<Post>(post.GetProperty("data").ToString(), options));
+                    var postId = post.GetProperty("data").GetProperty("id").GetString();
+                    if (!_retrievedPostIds.Contains(postId))
+                    {
+                        var postData = JsonSerializer.Deserialize<Post>(post.GetProperty("data").ToString(), options);
+                        posts.Add(postData);
+                        _retrievedPostIds.Add(postId);
+
+                    }
                 }
 
                 after = jsonDocument.RootElement.GetProperty("data").GetProperty("after").GetString();
@@ -60,6 +82,10 @@ public class RedditApiManager
                 {
                     break; // No more posts to fetch
                 }
+
+                // Calculate the interval for the next request
+                _interval = CalculateInterval(response.Headers);
+                await Task.Delay(_interval);
             }
             else
             {
@@ -69,6 +95,45 @@ public class RedditApiManager
         }
 
         return posts;
+    }
+
+    private TimeSpan CalculateInterval(HttpResponseHeaders headers)
+    {
+        if (headers.TryGetValues("x-ratelimit-remaining", out var remainingValues) &&
+            headers.TryGetValues("x-ratelimit-reset", out var resetValues))
+        {
+            if (int.TryParse(remainingValues.FirstOrDefault(), out int remaining) &&
+                int.TryParse(resetValues.FirstOrDefault(), out int reset))
+            {
+                if (remaining > 0)
+                {
+                    return TimeSpan.FromSeconds(reset / (double)remaining);
+                }
+                else
+                {
+                    return TimeSpan.FromSeconds(reset);
+                }
+            }
+        }
+        return TimeSpan.FromSeconds(1); // Default interval if headers are missing
+    }
+
+    public async Task ContinuouslyGetNewPosts(string subreddit, string sorting, int limit, Action<List<Post>> onNewPosts)
+    {
+        while (true)
+        {
+            var newPosts = await GetPosts(subreddit, sorting, limit);
+            if (newPosts != null && newPosts.Count > 0)
+            {
+                onNewPosts(newPosts);
+            }
+            else
+            {
+                Console.WriteLine("No new posts found or failed to retrieve posts.");
+            }
+
+            await Task.Delay(_interval);
+        }
     }
 
     private async Task<string> GetAuthorizationToken()

@@ -34,6 +34,7 @@ public class Subreddit
     {
         return _posts.GroupBy(post => post.Author)
                      .Select(group => new Poster(group.Key, group.Count()))
+                     .Where(poster => poster.Username != "[deleted]")
                      .OrderByDescending(poster => poster.PostCount)
                      .Take(top)
                      .ToList();
