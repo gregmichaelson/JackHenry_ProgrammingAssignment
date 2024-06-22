@@ -24,7 +24,7 @@ public class RedditOAuth
 
     public string GetAuthorizationUrl()
     {
-        return $"https://www.reddit.com/api/v1/authorize?client_id={_clientId}&response_type=code&state={_state}&redirect_uri={_redirectUri}&duration=temporary&scope=read identity report&t=day";
+        return $"https://www.reddit.com/api/v1/authorize?client_id={_clientId}&response_type=code&state={_state}&redirect_uri={_redirectUri}&duration=temporary&scope=read";
     }
 
     public void OpenBrowser(string url)

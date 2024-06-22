@@ -14,14 +14,16 @@ public class RedditApiManager
     private string _accessToken;
     private HashSet<string> _retrievedPostIds;
     private TimeSpan _interval { get; set; }
+    public Subreddit SubredditManager { get; private set; }
 
-    public RedditApiManager(string clientId, string clientSecret, string redirectUri)
+    public RedditApiManager(string clientId, string clientSecret, string redirectUri, string subredditName)
     {
         _clientId = clientId;
         _clientSecret = clientSecret;
         _redirectUri = redirectUri;
         _baseUrl = "https://oauth.reddit.com/r/";
         _retrievedPostIds = new HashSet<string>();
+        SubredditManager = new Subreddit(subredditName);
     }
 
     public TimeSpan Interval
@@ -40,7 +42,7 @@ public class RedditApiManager
         var posts = new List<Post>();
         string after = null;
 
-        while (posts.Count < limit)
+        while (limit == 0 || posts.Count < limit)
         {
             var remainingPosts = limit - posts.Count;
             var batchSize = remainingPosts > 100 ? 100 : remainingPosts;
@@ -125,13 +127,9 @@ public class RedditApiManager
             var newPosts = await GetPosts(subreddit, sorting, limit);
             if (newPosts != null && newPosts.Count > 0)
             {
+                SubredditManager.AddPost(newPosts);
                 onNewPosts(newPosts);
             }
-            else
-            {
-                Console.WriteLine("No new posts found or failed to retrieve posts.");
-            }
-
             await Task.Delay(_interval);
         }
     }

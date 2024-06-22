@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedditAppTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c30b784fd2d3799b57b642245346341dbdfc247f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+135313cf5de4272da228d102889a0651876d1dfb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedditAppTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedditAppTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

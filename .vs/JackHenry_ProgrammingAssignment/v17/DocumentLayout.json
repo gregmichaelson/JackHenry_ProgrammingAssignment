@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\services\\redditapimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\services\\redditapimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\models\\subreddit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\models\\subreddit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\services\\redditapimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\services\\redditapimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\services\\redditoauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\services\\redditoauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86637EBF-650A-40AF-B850-6A878BC0F05D}|RedditAppTests\\RedditAppTests.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapptests\\models\\subreddittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,8 +31,8 @@
       "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\models\\poster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|c:\\users\\michaelson2\\onedrive\\documents\\development_folder\\jackhenry_programmingassignment\\redditapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C71DE5C4-C00F-465A-8ECD-42ECF9CDF0A2}|RedditApp\\RedditApp.csproj|solutionrelative:redditapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,43 +42,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\appsettings.json",
+              "RelativeDocumentMoniker": "RedditApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\appsettings.json",
+              "RelativeToolTip": "RedditApp\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-21T17:17:29.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Poster.cs",
               "DocumentMoniker": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Models\\Poster.cs",
               "RelativeDocumentMoniker": "RedditApp\\Models\\Poster.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Models\\Poster.cs",
               "RelativeToolTip": "RedditApp\\Models\\Poster.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T00:37:01.618Z"
+              "WhenOpened": "2024-06-21T00:37:01.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SubredditTests.cs",
               "DocumentMoniker": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditAppTests\\Models\\SubredditTests.cs",
               "RelativeDocumentMoniker": "RedditAppTests\\Models\\SubredditTests.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditAppTests\\Models\\SubredditTests.cs",
               "RelativeToolTip": "RedditAppTests\\Models\\SubredditTests.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAcwFsAAAAAAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAqwDEAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T00:29:39.721Z"
+              "WhenOpened": "2024-06-21T00:29:39.721Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Post.cs",
               "DocumentMoniker": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Models\\Post.cs",
               "RelativeDocumentMoniker": "RedditApp\\Models\\Post.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Models\\Post.cs",
               "RelativeToolTip": "RedditApp\\Models\\Post.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAowCYAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T17:17:56.885Z"
+              "WhenOpened": "2024-06-20T17:17:56.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -84,34 +104,36 @@
               "RelativeDocumentMoniker": "RedditApp\\Services\\RedditOAuth.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Services\\RedditOAuth.cs",
               "RelativeToolTip": "RedditApp\\Services\\RedditOAuth.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAA1wEIAAAAMAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAgwBoAAACqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:53:23.085Z"
+              "WhenOpened": "2024-06-20T15:53:23.085Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "RedditApiManager.cs",
               "DocumentMoniker": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Services\\RedditApiManager.cs",
               "RelativeDocumentMoniker": "RedditApp\\Services\\RedditApiManager.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Services\\RedditApiManager.cs",
               "RelativeToolTip": "RedditApp\\Services\\RedditApiManager.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowB0AAAAiAAAA",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAqwIMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T15:50:48.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Subreddit.cs",
               "DocumentMoniker": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Models\\Subreddit.cs",
               "RelativeDocumentMoniker": "RedditApp\\Models\\Subreddit.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Models\\Subreddit.cs",
               "RelativeToolTip": "RedditApp\\Models\\Subreddit.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAwwBwAAAAEAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAgwEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T15:53:09.722Z"
+              "WhenOpened": "2024-06-20T15:53:09.722Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -121,7 +143,7 @@
               "RelativeDocumentMoniker": "RedditApp\\Program.cs",
               "ToolTip": "C:\\Users\\Michaelson2\\OneDrive\\Documents\\Development_Folder\\JackHenry_ProgrammingAssignment\\RedditApp\\Program.cs",
               "RelativeToolTip": "RedditApp\\Program.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwEIAAAALAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwBwAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T15:50:06.391Z",
               "EditorCaption": ""
